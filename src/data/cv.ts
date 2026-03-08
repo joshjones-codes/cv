@@ -1,139 +1,226 @@
 export interface CV {
-    name: string,
-    title: string,
-    location: string,
-    locationLink: string,
-    about: string,
-    summary: string,
-    personalWebsiteUrl: string,
-    contact: Contact;
-    work: Work[];
-    education: Education[];
-    skills: string[];
+  name: string;
+  title: string;
+  location: string;
+  locationLink: string;
+  about: string;
+  summary: string;
+  personalWebsiteUrl: string;
+  contact: Contact;
+  work: Work[];
+  education: Education[];
+  skills: string[];
 }
 
 export interface Contact {
-    email: string,
-    tel: string,
-    social: Social[];
+  email: string;
+  tel: string;
+  social: Social[];
 }
 
 export interface Social {
-    name: string;
-    url: string;
+  name: string;
+  url: string;
 }
 
 export interface Work {
-    company: string;
-    link: string;
-    title: string;
-    start: string;
-    end: string | null;
-    description: string;
-    achievements?: string[];
-    badges?: string[];
+  company: string;
+  link: string;
+  title: string;
+  start: string;
+  end: string | null;
+  description: string;
+  achievements?: string[];
+  badges?: string[];
 }
 
 export interface Education {
-    school: string;
-    degree: string;
-    start: string;
-    end: string | null;
+  school: string;
+  degree: string;
+  start: string;
+  end: string | null;
 }
 
 export const CV_DATA: CV = {
-    name: "Dmitry Zhuk",
-    title: "Software Engineer",
-    location: "Minsk, Belarus",
-    locationLink: "https://www.google.com/maps/place/Minsk",
-    about: "Results-driven Software Engineer dedicated to building high-quality products.",
-    summary: `A Software Engineer specializing in developing high-performance, scalable projects using Java and 
-        Spring Boot. I have extensive experience building core functionalities for complex platforms in FinTech, iGaming, 
-        and healthcare.`,
-    personalWebsiteUrl: "https://dzhuk.com",
-    contact: {
-        email: "dmitryzhuk98@gmail.com",
-        tel: "+375295559327",
-        social: [
-            {name: "GitHub", url: "https://github.com/zhukdi"},
-            {name: "LinkedIn", url: "https://linkedin.com/in/zhukdi"},
-        ],
+  name: "Joshua Jones",
+  title: "Senior Full Stack Engineer",
+  location: "Toronto, ON, Canada",
+  locationLink: "https://www.google.com/maps/place/Toronto,+ON",
+  about:
+    "Senior full-stack engineer and founder-builder shipping clean, fast SaaS products end-to-end — from architecture and APIs to pixel-level UI polish.",
+  summary: `Senior full-stack engineer with 6+ years building and scaling SaaS products from concept to production. I specialize in modern web stacks including Next.js, React, Node.js, Prisma, GraphQL, and PostgreSQL.
+
+I enjoy owning problems end-to-end — from product design and APIs to frontend UX and deployment. My work spans multi-tenant enterprise platforms and founder-led SaaS products.
+
+Highlights include building white-label SaaS systems used by global brands and launching real products such as SlipCheck and Precision.`,
+
+  personalWebsiteUrl: "https://precision.to",
+
+  contact: {
+    email: "mrjoshuajones@protonmail.com",
+    tel: "+1-438-458-8808",
+    social: [
+      { name: "GitHub", url: "https://github.com/joshjones-codes" },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/joshuajoness" },
+      { name: "SlipCheck", url: "https://slipcheck.pro" },
+      { name: "Precision", url: "https://precision.to" },
+    ],
+  },
+
+  work: [
+    {
+      company: "Boardera",
+      link: "https://boardera.ca",
+      title: "Full Stack Developer",
+      start: "June 2020",
+      end: "Present",
+      description:
+        "Lead development of a multi-tenant white-label SaaS platform for electronics manufacturers powering multiple global brands.",
+
+      achievements: [
+        "Led development of a multi-tenant white-label SaaS platform used by multiple brands, owning features end-to-end from requirements to production rollout.",
+        "Architected scalable backend and frontend systems across Meteor, Node.js, and GraphQL enabling rapid client onboarding and customization.",
+        "Improved maintainability and delivery speed through pragmatic architecture decisions, refactors, and development standards.",
+        "Strengthened engineering quality through code reviews, mentorship, and collaborative engineering practices.",
+        "Delivered complex business-critical workflows including pricing, quoting logic, and performance improvements while maintaining clean UX and operational reliability.",
+      ],
+
+      badges: [
+        "Meteor",
+        "Node.js",
+        "React",
+        "GraphQL (Apollo)",
+        "tRPC",
+        "Zod",
+        "Prisma",
+        "PostgreSQL",
+        "MongoDB",
+        "Temporal",
+        "ERP Integrations",
+        "Odoo",
+        "xTuple",
+        "AWS",
+        "Docker",
+        "Jest",
+        "Cypress",
+      ],
     },
-    work: [
-        {
-            company: "Dzengi.com",
-            link: "https://www.linkedin.com/company/dzengicom/",
-            title: "Java Software Engineer",
-            start: "May 2024",
-            end: "Present",
-            description: "Develop and maintain backend microservices for a high-performance, multi-asset trading platform.",
-            achievements: [
-                "Engineer scalable microservices with Java 21 and Spring Boot for user management, trade execution, and onboarding.",
-                "Implement an event-driven architecture with Kafka for reliable, real-time data processing between services.",
-                "Develop secure RESTful APIs using the OpenAPI standard for frontend and internal system integration.",
-                "Manage PostgreSQL schema evolution and data integrity using Liquibase for database migrations.",
-                "Monitor system performance and health using Grafana and OpenSearch to ensure high availability."
-            ],
-            badges: ["Java 21", "Spring Boot", "Kafka", "Redis", "PostgreSQL", "Liquibase", "JUnit", "Mockito", "Testcontainers", "AWS",
-                "Docker", "REST", "OpenAPI", "Grafana", "OpenSearch", "k6"],
-        },
-        {
-            company: "Wisercat, CATCO Technologies",
-            link: "https://www.linkedin.com/company/catco-tech",
-            title: "Full Stack Engineer",
-            start: "December 2022",
-            end: "April 2024",
-            description: "Contributed to the development of a high-intensity, B2B gambling platform built on a microservice architecture.",
-            achievements: [
-                "Developed and maintained scalable backend microservices using Java 11 and Spring Boot to support core gaming and business logic.",
-                "Engineered high-performance data solutions using Apache Ignite / GridGain as an In-Memory Data Platform",
-                "Built real-time, interactive features for live gaming events by implementing WebSockets with the STOMP protocol.",
-                "Designed and implemented RESTful APIs to facilitate seamless integration with third-party gaming services and internal clients."
-            ],
-            badges: ["Java 11", "Spring Boot", "WebSockets", "STOMP", "GridGain", "Apache Ignite", "Angular",
-                "TypeScript", "AWS", "Docker"],
-        },
-        {
-            company: "EffectiveSoft",
-            link: "https://www.linkedin.com/company/effectivesoft",
-            title: "Java Software Engineer",
-            start: "August 2021",
-            end: "November 2022",
-            description: `Developed solutions for diverse projects, including a healthcare cloud-sync feature, a GIS 
-                visualization platform, and an internal automation tool.`,
-            achievements: [
-                "Built and maintained backend services for enterprise web apps using Java and Spring.",
-                "Implemented cloud-native features using AWS services like Lambda, S3, IoT and KMS.",
-                "Managed relational (PostgreSQL, MySQL, SQLite) and NoSQL (DynamoDB) databases, using Liquibase for schema evolution.",
-                "Ensured application quality with comprehensive unit and integration testing using JUnit, Spock, and Testcontainers."
-            ],
-            badges: ["Java 11", "Spring Boot", "AWS", "PostgreSQL", "SQLite", "JUnit", "Spock", "Testcontainers"],
-        },
-        {
-            company: "IBA Group",
-            link: "https://www.linkedin.com/company/iba-group",
-            title: "Java Software Engineer",
-            start: "December 2017",
-            end: "July 2021",
-            description: "Developed and maintained a full-stack enterprise billing and subscriber management system within the telecommunications industry.",
-            achievements: [
-                "Engineered and implemented RESTful APIs and backend business logic using a Java EE stack, including EJB, JAX-RS, and Hibernate",
-                "Built and enhanced responsive, user interfaces using modern frameworks like Angular and component libraries such as Primefaces."
-            ],
-            badges: ["Java 8", "EJB", "JAX-RS", "Hibernate", "Maven", "Wildfly", "Jaspersoft", "Oracle", "Angular",
-                "Primefaces", "UIkit"],
-        }
-    ],
-    education: [
-        {
-            school: "Belarusian State University",
-            degree: "Bachelor's degree, Mathematics and information technologies",
-            start: "2015",
-            end: "2019",
-        },
-    ],
-    skills: [
-        "Java (8, 11, 21)", "Spring Boot", "Hibernate", "Kafka", "Maven", "AWS", "Angular", "SQL", "PostreSQL", "Docker",
-        "JUnit", "Mockito", "REST"
-    ],
+
+    {
+      company: "SlipCheck",
+      link: "https://slipcheck.pro",
+      title: "Founder / Developer",
+      start: "2023",
+      end: "Present",
+      description:
+        "Compliance SaaS for snow-removal companies with evidence-grade logging, GPS timestamps, and automated reporting.",
+
+      achievements: [
+        "Built a mobile-first compliance platform with GPS + timestamp logging and automated reporting workflows.",
+        "Designed a system for generating standardized compliance reports improving audit readiness and reducing administrative overhead.",
+        "Shipped a real product to real users and iterated rapidly through founder-led product development.",
+      ],
+
+      badges: [
+        "Next.js",
+        "Prisma",
+        "PostgreSQL",
+        "Supabase",
+        "Tailwind",
+        "SaaS",
+        "Product",
+      ],
+    },
+
+    {
+      company: "Precision",
+      link: "https://precision.to",
+      title: "Founder / Developer",
+      start: "2024",
+      end: "Present",
+      description:
+        "Bodybuilding companion app with nutrition tracking, AI-assisted logging and insights, journaling, and physique progress tracking.",
+
+      achievements: [
+        "Built a modern consumer SaaS for nutrition tracking and progress monitoring designed for consistent daily engagement.",
+        "Implemented AI-assisted flows to reduce logging friction and improve adherence.",
+        "Owned product design and engineering end-to-end including onboarding flows, paywall tiers, data models, UI system, and deployment.",
+      ],
+
+      badges: [
+        "Next.js",
+        "Prisma",
+        "Supabase",
+        "Apollo GraphQL",
+        "Tailwind",
+        "SaaS",
+      ],
+    },
+
+    {
+      company: "Shine Web Creations",
+      link: "https://www.shinewebcreations.com/",
+      title: "Full Stack Developer",
+      start: "November 2019",
+      end: "April 2020",
+      description:
+        "Built responsive React frontends and Node.js APIs for SMB clients with integrations across payments and operational systems.",
+
+      achievements: [
+        "Developed responsive React frontends and Node.js APIs for client projects with a focus on usability and delivery speed.",
+        "Integrated third-party payment and logistics APIs improving client conversion and operational workflows.",
+        "Worked directly with business stakeholders to translate requirements into production features.",
+      ],
+
+      badges: [
+        "React",
+        "Node.js",
+        "REST APIs",
+        "Payments",
+        "Integrations",
+        "JavaScript",
+      ],
+    },
+  ],
+
+  education: [
+    {
+      school: "Trent University",
+      degree: "Philosophy & Business Administration",
+      start: "2014",
+      end: "2018",
+    },
+    {
+      school: "Haiku Academy",
+      degree: "Full-Stack Web Development Bootcamp",
+      start: "2019",
+      end: "2019",
+    },
+  ],
+
+  skills: [
+    "Node.js",
+    "Express.js",
+    "Prisma",
+    "tRPC",
+    "Zod",
+    "GraphQL (Apollo)",
+    "REST APIs",
+    "PostgreSQL",
+    "MongoDB",
+    "Temporal",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Zustand",
+    "React Hook Form",
+    "AWS",
+    "Vercel",
+    "Supabase",
+    "Docker",
+    "Jest",
+    "Cypress",
+    "Git/GitHub/Bitbucket",
+    "Agile/Scrum",
+  ],
 };
